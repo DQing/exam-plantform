@@ -35,4 +35,8 @@ public class BlankQuizService {
     public List<BlankQuiz> getAll() {
         return blankQuizRepository.getAll();
     }
+
+    public void delete(String blankQuizId) {
+        blankQuizRepository.delete(blankQuizId);
+    }
 }

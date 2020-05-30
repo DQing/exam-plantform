@@ -10,4 +10,6 @@ public interface BlankQuizRepository {
     BlankQuizId nextBlankQuizId();
 
     List<BlankQuiz> getAll();
+
+    void delete(String blankQuizId);
 }

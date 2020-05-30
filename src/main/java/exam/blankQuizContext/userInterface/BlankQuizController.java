@@ -42,4 +42,10 @@ public class BlankQuizController {
     void update(@PathVariable String blankQuizId, @RequestBody BlankQuizCommand command) {
         blankQuizService.updateBlankQuiz(blankQuizId, command);
     }
+
+    @DeleteMapping("/blankQuizzes/{blankQuizId}")
+    @ResponseStatus(HttpStatus.OK)
+    void update(@PathVariable String blankQuizId) {
+        blankQuizService.delete(blankQuizId);
+    }
 }

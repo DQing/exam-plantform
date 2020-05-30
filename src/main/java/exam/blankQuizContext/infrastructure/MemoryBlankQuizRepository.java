@@ -37,4 +37,9 @@ public class MemoryBlankQuizRepository implements BlankQuizRepository {
         return blankQuizzes.stream().collect(Collectors.toList());
     }
 
+    @Override
+    public void delete(String blankQuizId) {
+        blankQuizzes.remove(find(new BlankQuizId(blankQuizId)));
+    }
+
 }
