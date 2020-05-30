@@ -1,10 +1,12 @@
 package exam.blankQuizContext.domain.model;
 
-public class BlankQuiz {
-    private static String teacherId;
-    private static int number;
-    private static int score;
-    private final BlankQuizId quizId;
+import exam.blankQuizContext.domain.shared.Entity;
+
+public class BlankQuiz implements Entity<BlankQuiz> {
+    private String teacherId;
+    private int number;
+    private int score;
+    private BlankQuizId quizId;
 
     public BlankQuiz(BlankQuizId quizId, String teacherId, int number, int score) {
 
@@ -32,5 +34,16 @@ public class BlankQuiz {
 
     public static BlankQuiz create(BlankQuizId quizId, String teacherId, int number, int score) {
         return new BlankQuiz(quizId, teacherId, number, score);
+    }
+
+    public void update(String teacherId, int number, int score) {
+        this.teacherId = teacherId;
+        this.number = number;
+        this.score = score;
+    }
+
+    @Override
+    public boolean sameIdentityAs(BlankQuiz other) {
+        return quizId.sameValueAs(other.quizId);
     }
 }
